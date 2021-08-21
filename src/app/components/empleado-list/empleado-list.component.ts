@@ -1,5 +1,6 @@
 import { Empleado } from './../../models/Empleado';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-empleado-list',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./empleado-list.component.css']
 })
 export class EmpleadoListComponent implements OnInit {
+
+  form:FormGroup;
 
   listaDeEmpleados: Empleado[] = [
     { Legajo:1, Nombre:'Gabriel', Apellido:'Chaldu', Sexo:'Masculino', Salario: 25000 },
@@ -17,8 +20,19 @@ export class EmpleadoListComponent implements OnInit {
     { Legajo:6, Nombre:'Alejandra', Apellido:'Lucero', Sexo:'Femenino', Salario: 125000 },
   ]
   radioButtonSeleccionado = 'Todos';
-  constructor() { }
+
+  constructor(private formBuilder:FormBuilder) { 
+    this.form = this.formBuilder.group({
+      legajo:['', [Validators.required]],
+      apellido:['', Validators.required],
+      nombre:['',Validators.required],
+      sexo: ['', Validators.required],
+      salario:['', Validators.required]
+    })
+    
+  }
   ngOnInit(): void {
+    
   }
   obtenerTotalEmpleados():number
   {
@@ -45,5 +59,17 @@ export class EmpleadoListComponent implements OnInit {
   filtroXSexo(radioButtonSelect:string):void
   {
     this.radioButtonSeleccionado=radioButtonSelect;
+  }
+
+  agregarEmpleadoalArray()
+  {
+    const e:Empleado = {
+      Nombre: this.form.get('nombre')?.value,
+      Apellido: this.form.get('apellido')?.value,
+      Legajo: this.form.get('legajo')?.value,
+      Salario: this.form.get('salario')?.value,
+      Sexo: this.form.get('sexo')?.value
+    }    
+    this.listaDeEmpleados.push(e);
   }
 }
