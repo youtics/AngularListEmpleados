@@ -71,5 +71,19 @@ export class EmpleadoListComponent implements OnInit {
       Sexo: this.form.get('sexo')?.value
     }    
     this.listaDeEmpleados.push(e);
+    this.Limpiar();
+  }
+  Limpiar()
+  {
+   
+    this.form.patchValue(
+      {
+        legajo: '',
+        apellido: '',
+        nombre: '',
+        sexo: '',
+        salario: ''
+      }
+    );
   }
 }

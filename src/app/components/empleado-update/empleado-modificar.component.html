@@ -1,1 +1,33 @@
-<p>empleado-modificar works!</p>
+<div class="container mt-3">
+    <h3>ACTUALIZAR EMPLEADO</h3>
+    <form class="row g-3" [formGroup]="form">
+        <div class="col-md-3">
+        <label for="inputLegajo" class="form-label">Legajo</label>
+        <input type="text" class="form-control" id="inputLegajo" formControlName="legajo" (keyup)="completarBusqueda()">
+        </div>
+        <div class="col-md-9">
+        <label for="inputApellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="inputApellido" formControlName="apellido" >
+        </div>
+        <div class="col-8">
+        <label for="inputNombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="inputNombre" formControlName="nombre">
+        </div>
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">Sexo</label>
+            <select id="inputState" class="form-select" formControlName="sexo">
+                <option selected>Seleccione...</option>
+                <option>Masculino</option>
+                <option>Femenino</option>
+                <option>No definido</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="inputSalario" class="form-label">Salario</label>
+            <input type="text" class="form-control" id="inputSalario" formControlName="salario">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" (click)="modificar()">Modificar Empleado</button>
+        </div>
+    </form>
+  </div>
