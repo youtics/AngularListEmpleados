@@ -36,7 +36,6 @@
       [todos]="obtenerTotalEmpleados()" [masculino]="obtenerMasculinos()" 
       [femenino]="obtenerFemeninos()" (countRadioButtonChange)="filtroXSexo($event)">
     </app-count-empleados>
-    <button type="button" class="btn btn-dark" (click)="agregarEmpleadoalArray()">Dark</button>
     <div class="card mt-3">
         <div class="card-body">
           <table class="table">
@@ -64,3 +63,4 @@
         </div>
     </div>
 </div>
+<app-empleado-crear  [lista] = listaDeEmpleados></app-empleado-crear>

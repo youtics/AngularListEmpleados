@@ -1,32 +1,18 @@
+
 <div class="container mt-3">
-    <form class="row g-3">
+    <form class="row g-3" [formGroup]="form">
+        <h3>Buscar Empleado</h3>
         <div class="col-md-3">
         <label for="inputLegajo" class="form-label">Legajo</label>
-        <input type="legajo" class="form-control" id="inputLegajo">
+        <input type="legajo" class="form-control" id="inputLegajo" formControlName = "legajo">
         </div>
         <div class="col-md-9">
         <label for="inputApellido" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="inputApellido">
-        </div>
-        <div class="col-8">
-        <label for="inputNombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="inputNombre">
-        </div>
-        <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
-                <option selected>Seleccione...</option>
-                <option>Maculino</option>
-                <option>Femenino</option>
-                <option>No definido</option>
-            </select>
-        </div>
-        <div class="col-md-3">
-            <label for="inputSalario" class="form-label">Salario</label>
-            <input type="text" class="form-control" id="inputSalario">
-        </div>
-        <div class="col-12">
-        <button type="submit" class="btn btn-primary" (click)="agregarEmpleadoalArray()" >Add Empleado</button>
-        </div>
+        <input type="text" class="form-control" id="inputApellido" formControlName = "apellido">
+        {{legajoEliminar}}
+        </div>    
     </form>
+    <div class="col-12 mt-4">
+      <button type="submit" class="btn btn-primary" (click)="controladorEliminar()">Eliminar Empleados</button>
+    </div>
 </div>
