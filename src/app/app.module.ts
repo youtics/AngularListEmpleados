@@ -7,6 +7,8 @@ import { EmpleadoListComponent } from './components/empleado-list/empleado-list.
 import { CountEmpleadosComponent } from './components/empleado-list/count-empleados/count-empleados.component';
 import { EmpleadoCrearComponent } from './components/empleado-crear/empleado-crear.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EmpleadoModificarComponent } from './components/empleado-update/empleado-modificar.component';
+import { EmpleadoDeleteComponent } from './components/empleado-delete/empleado-delete.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     EmpleadoListComponent,
     CountEmpleadosComponent,
-    EmpleadoCrearComponent
+    EmpleadoCrearComponent,
+    EmpleadoModificarComponent,
+    EmpleadoDeleteComponent
   ],
   imports: [
     BrowserModule,

@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Empleado } from 'src/app/models/Empleado';
 
 @Component({
-  selector: 'app-empleado-crear',
-  templateUrl: './empleado-crear.component.html',
-  styleUrls: ['./empleado-crear.component.css']
+  selector: 'app-empleado-delete',
+  templateUrl: './empleado-delete.component.html',
+  styleUrls: ['./empleado-delete.component.css']
 })
-export class EmpleadoCrearComponent implements OnInit {
+export class EmpleadoDeleteComponent implements OnInit {
 
   @Input() lista:Empleado[] = [];
   legajoEliminar:string='-1';
@@ -51,4 +51,5 @@ export class EmpleadoCrearComponent implements OnInit {
     if(posicion!=-1)
       this.eliminarElemento(posicion);
   }
+
 }
